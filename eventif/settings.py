@@ -31,7 +31,7 @@ STATIC_URL = "static/"
 SECRET_KEY = config('SECRET_KEY')
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = config('DEBUG', default=False, cast=bool)
+DEBUG = config('DEBUG', default=False, cast=Csv())
 
 ALLOWED_HOSTS = ['*']
 
@@ -43,16 +43,9 @@ INSTALLED_APPS = [
     "django.contrib.auth",
     "django.contrib.contenttypes",
     "django.contrib.sessions",
-    "django.contrib
-# Static files (CSS, JavaScript, Images)
-# https://docs.djangoproject.com/en/4.2/howto/static-files/
-
-STATIC_URL = "static/"
-STATIC_ROOT = str(BASE_DIR / 'staticfiles')
-
-# Default primary ke.messages",
     "django.contrib.staticfiles",
     "core",
+    "subscriptions",
 ]
 
 MIDDLEWARE = [
