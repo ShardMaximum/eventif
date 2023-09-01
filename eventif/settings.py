@@ -35,6 +35,7 @@ DEBUG = config('DEBUG', default=False, cast=Csv())
 
 ALLOWED_HOSTS = config['ALLOWED_HOSTS', default='', cast=Csv()]
 
+DEFAULT_FROM_MAIL = config('DEFAULT_FROM_MAIL')
 
 # Application definition
 
