@@ -11,7 +11,7 @@ https://docs.djangoproject.com/en/4.2/ref/settings/
 """
 
 from pathlib import Path
-from decouple import configaula
+from decouple import config, Csv
 from dj_database_url import parse as dburl
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
@@ -33,7 +33,7 @@ SECRET_KEY = config('SECRET_KEY')
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = config('DEBUG', default=False, cast=Csv())
 
-ALLOWED_HOSTS = config['ALLOWED_HOSTS', default='', cast=Csv()]
+ALLOWED_HOSTS = config('ALLOWED_HOSTS', default='', cast=Csv())
 
 DEFAULT_FROM_MAIL = config('DEFAULT_FROM_MAIL')
 
