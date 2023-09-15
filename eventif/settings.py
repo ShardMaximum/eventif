@@ -43,10 +43,13 @@ INSTALLED_APPS = [
     "django.contrib.admin",
     "django.contrib.auth",
     "django.contrib.contenttypes",
+    "django.contrib.messages",
     "django.contrib.sessions",
     "django.contrib.staticfiles",
+    "test_without_migrations",
+    "contact",
     "core",
-    "subscriptions",
+    "subscriptions.apps.SubscriptionsConfig",
 ]
 
 MIDDLEWARE = [
@@ -85,9 +88,7 @@ WSGI_APPLICATION = "eventif.wsgi.application"
 
 default_dburl = "sqlite:///" + str(BASE_DIR / "db.sqlite3")
 DATABASES = {
-    "default": {
-        config('DATABASE_URL', default=default_dburl, cast=dburl)
-    }
+    "default": config('DATABASE_URL', default=default_dburl, cast=dburl)
 }
 
 
@@ -139,3 +140,5 @@ EMAIL_PORT = config('EMAIL_PORT', cast=int)
 EMAIL_USE_TLS = config('EMAIL_USE_TLS', cast=bool)
 EMAIL_HOST_USER = config('EMAIL_HOST_USER')
 EMAIL_HOST_PASSWORD = config('EMAIL_HOST_PASSWORD')
+
+TEST_WITHOUT_MIGRATIONS_COMMAND = 'django_nose.management.commands.test.Command'
