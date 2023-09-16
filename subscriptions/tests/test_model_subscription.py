@@ -5,12 +5,12 @@ from subscriptions.models import Subscription
 class SubscriptionModelTest(TestCase):
     def setUp(self):
         self.obj = Subscription(
-            name = "Vitor Rocha"
-            cpf = "12345678901"
-            email = "vitor.rocha@aluno.riogrande.ifrs.edu.br"
+            name = "Vitor Rocha",
+            cpf = "12345678901",
+            email = "vitor.rocha@aluno.riogrande.ifrs.edu.br",
             phone = "53912345678"
         )
-        obj.save()
+        self.obj.save()
 
     def test_create(self):
         self.assertTrue(Subscription.objects.exists())
