@@ -20,7 +20,7 @@ def send_msg(request):
     mail.send_mail('Mensagem enviada através do site',
                    mailbody,
                    sender,
-                   [sender, form.cleaned_data['email']])
+                   [sender, 'contato@eventif.com.br'])
 
     messages.success(request, "Um email foi enviado para nossa equipe. Obrigado!")
     return HttpResponseRedirect('/contato/')
