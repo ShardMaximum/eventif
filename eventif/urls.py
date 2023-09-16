@@ -18,9 +18,11 @@ from django.contrib import admin
 from django.urls import path
 from core.views import home
 from subscriptions.views import subscribe
+from contact.views import show_contact_form
 
 urlpatterns = [
     path("",home),
+    path("contato/", show_contact_form),
     path('inscricao/', subscribe),
     path("admin/", admin.site.urls),
 ]
