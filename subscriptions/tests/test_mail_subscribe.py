@@ -6,7 +6,7 @@ class MailTest(TestCase):
         data = dict(name="Vitor Rocha", 
                     cpf="12345678901", 
                     email="vitor.rocha@aluno.riogrande.ifrs.edu.br", 
-                    phone="53-91234-5678")
+                    phone="53912345678")
         self.response = self.client.post('/inscricao/', data)
         self.email = mail.outbox[0]
 
