@@ -18,7 +18,7 @@ class SubscriptionModelAdminTest(TestCase):
 
     def test_mark_all(self):
         self.call_action()
-        self.assertEqual(1, Subscription.objects.filter(paid=True)).count()
+        self.assertEqual(1, Subscription.objects.filter(paid=True).count())
 
     def test_message(self):
         self.call_action()
