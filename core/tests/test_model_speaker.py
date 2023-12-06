@@ -1,10 +1,10 @@
-from django.test import TestCase
 from django.shortcuts import resolve_url as r
+from django.test import TestCase
 from core.models import Speaker
 
 class SpeakerModelTest(TestCase):
     def setUp(self):
-        speaker = Speaker.objects.create(
+        self.speaker = Speaker.objects.create(
             name = 'Grace Hopper',
             slug = 'grace-hopper',
             website = 'https://pt.wikipedia.org/wiki/Grace_Hopper',
@@ -28,4 +28,4 @@ class SpeakerModelTest(TestCase):
 
     def test_get_absolute_url(self):
         url = r('speaker_detail', slug=self.speaker.slug)
-        self.assertEqual(url, self.speaker.get_absolute_url)
+        self.assertEqual(url, self.speaker.get_absolute_url())

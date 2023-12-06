@@ -3,10 +3,7 @@ from django.shortcuts import render, get_object_or_404
 from core.models import Speaker, Talk
 
 def home(request):
-    speakers = [
-        {'name':'Grace Hopper', 'photo': 'https://cleberfonseca.com.br/img/hopper.jpeg'},
-        {'name':'Alan Turing', 'photo': 'https://cleberfonseca.com.br/img/turing.jpeg'}
-    ]
+    speakers = Speaker.objects.all()
     return render(request, 'index.html', {'speakers': speakers})
 
 def speaker_detail(request, slug):

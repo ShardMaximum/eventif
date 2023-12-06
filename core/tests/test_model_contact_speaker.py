@@ -4,7 +4,7 @@ from core.models import Speaker, ContactSpeaker
 
 class ContactSpeakerModelTest(TestCase):
     def setUp(self):
-        speaker = Speaker.objects.create(
+        self.speaker = Speaker.objects.create(
             name = "Cleber Fonseca",
             slug = "cleber-fonseca",
             photo = "https://cleberfonseca.com.br/img/perfil.png"
