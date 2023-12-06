@@ -1,6 +1,6 @@
 from django.contrib import admin
 from django.utils.html import format_html
-from core.models import Speaker, ContactSpeaker
+from core.models import Speaker, ContactSpeaker, Talk
 
 class ContactInline(admin.TabularInline):
     model = ContactSpeaker
@@ -22,3 +22,4 @@ class SpeakerModelAdmin(admin.ModelAdmin):
     photo_img.short_description = 'foto'
 
 admin.site.register(Speaker, SpeakerModelAdmin)
+admin.site.register(Talk)

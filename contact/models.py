@@ -1,6 +1,4 @@
-from django.core import mail
 from django.db import models
-
 
 class Message(models.Model):
     name = models.CharField('nome', max_length=200)
