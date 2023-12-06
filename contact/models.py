@@ -7,7 +7,7 @@ class Message(models.Model):
     message = models.CharField('mensagem', max_length=2000)
     created_at = models.DateTimeField('criado em', auto_now_add=True)
     response = models.CharField('resposta', max_length=2000, blank=True)
-    response_date = models.DateTimeField('respondido em', blank=True)
+    response_date = models.DateTimeField('respondido em', null=True)
 
     class Meta:
         verbose_name = "mensagem"
